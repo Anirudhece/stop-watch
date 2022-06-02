@@ -20,7 +20,6 @@ function tik(){
         htime++;
         mtime=0;
     }
-
     hrs.innerHTML=htime;
     min.innerHTML=mtime;
     sec.innerHTML=stime; 
@@ -28,11 +27,9 @@ function tik(){
 
 let inter;
 function set_inter(){
-    inter=setInterval(tik,1000);
-//    let inter= 
+    inter=setInterval(tik,1000); 
 }
 set_inter();
-
 
 reset.addEventListener('click',(fn)=>{
     stime=0;
@@ -40,17 +37,13 @@ reset.addEventListener('click',(fn)=>{
     htime=0;
 })
 
-
-
 resume.disabled=true ;
 
 pause.addEventListener('click',(fn)=>{
     clearInterval(inter);
     pause.disabled=true;
     resume.disabled=false;
-
 })
-
 
 resume.addEventListener('click',(fn)=>{
     set_inter();
