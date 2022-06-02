@@ -24,13 +24,36 @@ function tik(){
     hrs.innerHTML=htime;
     min.innerHTML=mtime;
     sec.innerHTML=stime; 
-
 }
 
-setInterval(tik,1000);
+let inter;
+function set_inter(){
+    inter=setInterval(tik,1000);
+//    let inter= 
+}
+set_inter();
+
 
 reset.addEventListener('click',(fn)=>{
     stime=0;
     mtime=0;
     htime=0;
+})
+
+
+
+resume.disabled=true ;
+
+pause.addEventListener('click',(fn)=>{
+    clearInterval(inter);
+    pause.disabled=true;
+    resume.disabled=false;
+
+})
+
+
+resume.addEventListener('click',(fn)=>{
+    set_inter();
+    resume.disabled=true;
+    pause.disabled=false;
 })
